@@ -1,0 +1,64 @@
+/**
+ * TABLES
+ *
+ * HTML table styles.
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Table.
+ */
+
+$tables-table-margin: 0 0 $base-spacing-medium !default;
+$tables-table-background: transparent !default;
+
+/* Header */
+$tables-table__header-padding: $base-spacing-small !default;
+$tables-table__header-font-size: $base-font-size !default;
+$tables-table__header-font-weight: bold !default;
+$tables-table__header-text-align: left !default;
+$tables-table__header-color: inherit !default;
+$tables-table__header-background: transparent !default;
+$tables-table__header-border-width: 0 0 1px 0 !default;
+$tables-table__header-border-style: solid !default;
+$tables-table__header-border-color: $base-muted-color !default;
+
+/* Body */
+$tables-table__body-padding: $tables-table__header-padding !default;
+$tables-table__body-font-size: $tables-table__header-font-size !default;
+$tables-table__body-font-weight: normal !default;
+$tables-table__body-text-align: $tables-table__header-text-align !default;
+$tables-table__body-color: $tables-table__header-color !default;
+$tables-table__body-background: transparent !default;
+$tables-table__body-border-width: 0 !default;
+$tables-table__body-border-style: $tables-table__header-border-style !default;
+$tables-table__body-border-color: $tables-table__header-border-color !default;
+
+/* Footer */
+$tables-table__footer-padding: $tables-table__header-padding !default;
+$tables-table__footer-font-size: $tables-table__header-font-size !default;
+$tables-table__footer-font-weight: normal !default;
+$tables-table__footer-text-align: $tables-table__header-text-align !default;
+$tables-table__footer-color: $tables-table__header-color !default;
+$tables-table__footer-background: $tables-table__header-background !default;
+$tables-table__footer-border-width: 1px 0 0 0 !default;
+$tables-table__footer-border-style: $tables-table__header-border-style !default;
+$tables-table__footer-border-color: $tables-table__header-border-color !default;
+
+/**
+ * Themes.
+ */
+
+/* Stripe */
+$tables-table--stripe__body-color: inherit !default;
+$tables-table--stripe__body-background: $base-muted-color !default;
+
+//
+// IMPORTS
+//
+
+@import "table";
+@import "themes";

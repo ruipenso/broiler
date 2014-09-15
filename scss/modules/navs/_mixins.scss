@@ -1,0 +1,60 @@
+/**
+ * NAVS - MIXINS
+ *
+ * Helpers to create navigation styles.
+ */
+
+/**
+ * Create an horizontal nav.
+ */
+
+@mixin navs-nav(
+  $inline: true,
+  $padding: $navs-nav__item-padding,
+  $line-height: $base-line-height,
+  $color: $navs-nav__item-color,
+  $background: $navs-nav__item-background,
+  $color--hover: $navs-nav__item--hover-color,
+  $background--hover: $navs-nav__item--hover-background,
+  $color--active: $navs-nav__item--active-color,
+  $background--active: $navs-nav__item--active-background
+) {
+  @include clearfix();
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  > li {
+    @if ($inline == true) {
+      float: left;
+    }
+
+    > a {
+      display: block;
+
+      padding: $padding;
+
+      line-height: $line-height;
+
+      color: $color;
+      background: $background;
+
+      &:hover,
+      &:focus {
+        color: $color--hover;
+        background: $background--hover;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $color--active;
+        background: $background--active;
+      }
+    }
+  }
+}

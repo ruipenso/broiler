@@ -1,0 +1,98 @@
+/**
+ * MODALS
+ *
+ * Create a `modal` component.
+ *
+ * Example:
+ *
+ * <div class="modal">
+ *   <div class="modal__dialog">
+ *     <header class='modal__header'>
+ *       <a class='modal__close'>&times;</div>
+ *       <h4 class='modal__title'>Modal title</h4>
+ *     </header>
+ *
+ *     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</div>
+ *
+ *     <footer class='modal__footer'>
+ *       <a href="#" class="button">Button</a>
+ *     </footer>
+ *   </div>
+ * </div>
+ *
+ * <div class="modal-backdrop"></div>
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Defaults.
+ *
+ * 1. Only applied on `medium` or above devices.
+ */
+
+$modals-modal-z-index: 99 !default;
+
+$modals-modal-backdrop-background: rgba($base-black-color, .5) !default;
+
+$modals-modal__dialog-padding: $base-spacing-medium !default;
+$modals-modal__dialog-background: $base-white-color !default;
+$modals-modal__dialog-box-shadow: 0 0 10px rgba($base-black-color, .5) !default;
+
+$modals-modal__dialog-vertical-offset: rem-calc(100) !default; /* [1] */
+$modals-modal__dialog-width: 80% !default; /* [1] */
+$modals-modal__dialog-border-radius: $base-border-radius !default; /* [1] */
+
+$modals-modal__close-color: $base-primary-color !default;
+$modals-modal__close-color--hover: scale-color($modals-modal__close-color, $lightness: $base-lightness-factor) !default;
+
+/**
+ * Header.
+ *
+ * 1. Remove extra padding added by `.modal__dialog`.
+ */
+
+$modals-modal__header-margin: (-$base-spacing-medium) (-$base-spacing-medium) $base-spacing-medium !default; /* [1] */
+$modals-modal__header-padding: $base-spacing-medium !default;
+$modals-modal__header-border-width: 0 0 1px 0 !default;
+$modals-modal__header-border-style: solid !default;
+$modals-modal__header-border-color: $base-muted-color !default;
+
+/**
+ * Title.
+ */
+
+$modals-modal__title-margin: 0 !default;
+
+/**
+ * Footer.
+ *
+ * 1. Remove extra padding added by `.modal__dialog`.
+ */
+
+$modals-modal__footer-margin: $base-spacing-medium (-$base-spacing-medium) (-$base-spacing-medium) !default; /* [1] */
+$modals-modal__footer-padding: $base-spacing-medium !default;
+$modals-modal__footer-border-width: 1px 0 0 0 !default;
+$modals-modal__footer-border-style: solid !default;
+$modals-modal__footer-border-color: $base-muted-color !default;
+
+/**
+ * Sizes
+ */
+
+$modals-modal__dialog-breakpoint: map-get($base-breakpoints, "medium");
+$modals-modal__dialog--small-width: 30%;
+$modals-modal__dialog--medium-width: 40%;
+$modals-modal__dialog--large-width: 60%;
+$modals-modal__dialog--xlarge-width: 80%;
+$modals-modal__dialog--xxlarge-width: 95%;
+
+//
+// IMPORTS
+//
+
+@import "modal";
+@import "elements";
+@import "sizes";

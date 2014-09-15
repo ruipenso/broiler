@@ -1,0 +1,25 @@
+/**
+ * FORMS - FORM
+ *
+ * Base classes for the `form` element and misc elements.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Form defaults.
+ */
+
+form {
+  margin: $forms-form-margin;
+}
+
+/**
+ * Use this to group labels, elements, messages, etc.
+ */
+
+.form__group {
+  margin: $forms-form__group-margin;
+}

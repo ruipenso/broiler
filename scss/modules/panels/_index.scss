@@ -1,0 +1,50 @@
+/**
+ * PANELS
+ *
+ * Panel component.
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Panel.
+ */
+
+$panels-panel-margin: 0 0 $base-spacing-large !default;
+$panels-panel-padding: $base-spacing-medium !default;
+
+$panels-panel-color: $base-black-color !default;
+$panels-panel-background: $base-white-color !default;
+
+/**
+ * Themes.
+ */
+
+/* Error */
+$panels-panel--error-color: $base-white-color !default;
+$panels-panel--error-background: $base-error-color !default;
+
+/* Info */
+$panels-panel--info-color: $base-white-color !default;
+$panels-panel--info-background: $base-info-color !default;
+
+/* Muted */
+$panels-panel--muted-color: $base-white-color !default;
+$panels-panel--muted-background: $base-muted-color !default;
+
+/* Success */
+$panels-panel--success-color: $base-white-color !default;
+$panels-panel--success-background: $base-success-color !default;
+
+/* Warning */
+$panels-panel--warning-color: $base-white-color !default;
+$panels-panel--warning-background: $base-warning-color !default;
+
+//
+// IMPORTS
+//
+
+@import "panel";
+@import "themes";

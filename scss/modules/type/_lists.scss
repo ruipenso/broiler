@@ -1,0 +1,61 @@
+/**
+ * TYPE - LISTS
+ *
+ * Style for lists.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Unordered and Ordered lists.
+ */
+
+ul,
+ol {
+  margin: $type-list-margin;
+  padding: 0;
+}
+
+/**
+ * Unordered list style type.
+ */
+
+ul {
+  @if ($type-list--unordered-list-style-type != disc) {
+    list-style-type: $type-list--unordered-list-style-type;
+  }
+}
+
+/**
+ * Remove the bullets and side margins.
+ */
+
+.list--unstyled {
+  @include list-unstyled();
+}
+
+/**
+ * Sets list item side-by-side.
+ */
+
+.list--inline {
+  @include list-inline();
+}
+
+/**
+ * Definition list.
+ */
+
+dl {
+  margin: $type-definition-list-margin;
+
+  dt {
+    font-weight: $type-definition-list__term-font-weight;
+  }
+
+  dd {
+    margin: $type-definition-list__definition-margin;
+  }
+}

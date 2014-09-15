@@ -1,0 +1,84 @@
+/**
+ * NAVS - DROPDOWNS
+ *
+ * Dropdown style navigation.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Dropdown container
+ */
+
+.dropdown-container {
+  position: relative;
+}
+
+/**
+ * Dropdown defaults.
+ */
+
+.dropdown {
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  text-align: left;
+
+  @include navs-nav(
+    $inline: false,
+    $padding: $navs-dropdown__item-padding,
+    $color: $navs-dropdown__item-color,
+    $background: $navs-dropdown__item-background,
+    $color--hover: $navs-dropdown__item--hover-color,
+    $background--hover: $navs-dropdown__item--hover-background,
+    $color--active: $navs-dropdown__item--active-color,
+    $background--active: $navs-dropdown__item--active-background
+  );
+
+  margin-top: $base-spacing-medium;
+  padding: $navs-dropdown-padding;
+  min-width: $navs-dropdown-min-width;
+
+  background: $navs-dropdown-background;
+
+  @if ($navs-dropdown-border-width != 0) {
+    border-width: $navs-dropdown-border-width;
+    border-style: $navs-dropdown-border-style;
+    border-color: $navs-dropdown-border-color;
+  }
+
+  border-radius: $navs-dropdown-border-radius;
+  box-shadow: $navs-dropdown-box-shadow;
+
+  @include triangle(
+    $color: $navs-dropdown-background,
+    $direction: top,
+    $position: $base-spacing-medium*2,
+    $ratio: 1,
+    $border: $navs-dropdown-border-width,
+    $border-color: $navs-dropdown-border-color
+  );
+}
+
+/**
+ * Right-align dropdown.
+ */
+
+.dropdown--right {
+  right: 0;
+  left: auto !important;
+
+  &::before,
+  &::after {
+    left: auto;
+  }
+
+  &::before { right: $base-spacing-medium*2 }
+  &::after { right: $base-spacing-medium*2 - $navs-dropdown-border-width }
+}

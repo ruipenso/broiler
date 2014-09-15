@@ -1,0 +1,128 @@
+/**
+ * TABLES - TABLE
+ *
+ * Table defaults.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Table defaults.
+ */
+
+.table {
+  width: 100%;
+
+  // margin: $tables-table-margin;
+
+  @if ($tables-table-background != transparent) {
+    background: $tables-table-background;
+  }
+
+  > thead > tr {
+    > th,
+    > td {
+      @if ($tables-table__header-padding != 0) {
+        padding: $tables-table__header-padding;
+      }
+
+      @if ($tables-table__header-font-size != $base-font-size) {
+        font-size: $tables-table__header-font-size;
+      }
+
+      @if ($tables-table__header-font-weight != bold) {
+        font-weight: $tables-table__header-font-weight;
+      }
+
+      @if ($tables-table__header-text-align != center) {
+        text-align: $tables-table__header-text-align;
+      }
+
+      @if ($tables-table__header-color != inherit) {
+        color: $tables-table__header-color;
+      }
+
+      @if ($tables-table__header-background != transparent) {
+        background: $tables-table__header-background;
+      }
+
+      @if ($tables-table__header-border-width != 0) {
+        border-width: $tables-table__header-border-width;
+        border-style: $tables-table__header-border-style;
+        border-color: $tables-table__header-border-color;
+      }
+    }
+  }
+
+  > tbody > tr {
+    > th,
+    > td {
+      @if ($tables-table__body-padding != 0) {
+        padding: $tables-table__body-padding;
+      }
+
+      @if ($tables-table__body-font-size != $base-font-size) {
+        font-size: $tables-table__body-font-size;
+      }
+
+      @if ($tables-table__body-font-weight != normal) {
+        font-weight: $tables-table__body-font-weight;
+      }
+
+      @if ($tables-table__body-text-align != left) {
+        text-align: $tables-table__body-text-align;
+      }
+
+      @if ($tables-table__body-color != inherit) {
+        color: $tables-table__body-color;
+      }
+
+      @if ($tables-table__body-background != transparent) {
+        background: $tables-table__body-background;
+      }
+
+      @if ($tables-table__body-border-width != 0) {
+        border-width: $tables-table__body-border-width;
+        border-style: $tables-table__body-border-style;
+        border-color: $tables-table__body-border-color;
+      }
+    }
+  }
+
+  > tfoot > tr {
+    > th,
+    > td {
+      @if ($tables-table__footer-padding != 0) {
+        padding: $tables-table__footer-padding;
+      }
+
+      @if ($tables-table__footer-font-size != $base-font-size) {
+        font-size: $tables-table__footer-font-size;
+      }
+
+      @if ($tables-table__footer-font-weight != bold) {
+        font-weight: $tables-table__footer-font-weight;
+      }
+
+      @if ($tables-table__footer-text-align != center) {
+        text-align: $tables-table__footer-text-align;
+      }
+
+      @if ($tables-table__footer-color != inherit) {
+        color: $tables-table__footer-color;
+      }
+
+      @if ($tables-table__footer-background != transparent) {
+        background: $tables-table__footer-background;
+      }
+
+      @if ($tables-table__footer-border-width != 0) {
+        border-width: $tables-table__footer-border-width;
+        border-style: $tables-table__footer-border-style;
+        border-color: $tables-table__footer-border-color;
+      }
+    }
+  }
+}

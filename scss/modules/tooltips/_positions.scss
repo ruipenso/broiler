@@ -1,0 +1,45 @@
+/**
+ * TOOLTIPS - POSITIONS
+ *
+ * Change tooltip position.
+ */
+
+/**
+ * Top aligned tooltip.
+ */
+
+.tooltip--top {
+  margin-bottom: $tooltips-tooltip-spacing;
+
+  @include triangle($direction: bottom, $color: $tooltips-tooltip-background, $ratio: $tooltips-tooltip__triangle-ratio);
+}
+
+/**
+ * Right aligned tooltip.
+ */
+
+.tooltip--right {
+  margin-left: $tooltips-tooltip-spacing;
+
+  @include triangle($color: $tooltips-tooltip-background, $ratio: $tooltips-tooltip__triangle-ratio);
+}
+
+/**
+ * Bottom aligned tooltip.
+ */
+
+.tooltip--bottom {
+  margin-top: $tooltips-tooltip-spacing;
+
+  @include triangle($direction: top, $color: $tooltips-tooltip-background, $ratio: $tooltips-tooltip__triangle-ratio);
+}
+
+/**
+ * Left aligned tooltip.
+ */
+
+.tooltip--left {
+  margin-right: $tooltips-tooltip-spacing;
+
+  @include triangle($direction: right, $color: $tooltips-tooltip-background, $ratio: $tooltips-tooltip__triangle-ratio);
+}

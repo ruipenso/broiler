@@ -1,0 +1,114 @@
+/**
+ * MODALS - MODAL
+ *
+ * The modal container and "control" classes.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Append this to body to remove the scroll.
+ */
+
+.modal-open {
+  overflow: hidden;
+}
+
+/**
+ * Creates a backdrop "courtain" to distinguish the
+ * modal from the rest of the content.
+ */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  z-index: $modals-modal-z-index;
+
+  height: 100%;
+  width: 100%;
+
+  background: $modals-modal-backdrop-background;
+}
+
+/**
+ * Modal container defaults.
+ */
+
+.modal {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $modals-modal-z-index + 1;
+
+  overflow: auto;
+}
+
+/**
+ * Modal dialog default.
+ *
+ * 1. Full-height for `small` devices.
+ * 2. Remove extra spacing for first and last elements.
+ */
+
+.modal__dialog {
+  position: absolute;
+  z-index: $modals-modal-z-index + 2;
+
+  width: 100%;
+  min-height: 100vh; /* [1] */
+
+  padding: $modals-modal__dialog-padding;
+
+  background-color: $modals-modal__dialog-background;
+  box-shadow: $modals-modal__dialog-box-shadow;
+
+  outline: none;
+}
+
+/**
+ * Close "icon".
+ */
+
+.modal__close {
+  float: right;
+
+  color: $modals-modal__close-color;
+
+  &:hover,
+  &:focus {
+    color: $modals-modal__close-color--hover;
+  }
+}
+
+//
+// MEDIA-QUERIES
+//
+
+@include breakpoint("medium") {
+
+  /**
+   * 1. Reset `min-height` setted for `small` devices.
+   * 2. Horizontal center.
+   */
+
+  .modal__dialog {
+    min-height: 0; /* [1] */
+
+    float: left;
+    top: $modals-modal__dialog-vertical-offset;
+    left: 50%; /* [2] */
+
+    margin-bottom: $modals-modal__dialog-vertical-offset;
+    margin-left: -($modals-modal__dialog-width / 2); /* [2] */
+
+    width: $modals-modal__dialog-width;
+
+    border-radius: $modals-modal__dialog-border-radius;
+  }
+
+}

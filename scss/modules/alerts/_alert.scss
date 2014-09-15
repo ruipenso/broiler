@@ -1,0 +1,40 @@
+/**
+ * ALERTS - ALERT
+ *
+ * Default `alert` style.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Alert container.
+ */
+
+.alert {
+  @include alert(true);
+}
+
+/**
+ * Alert title.
+ */
+
+.alert__title {
+  margin: $alerts-alert__title-margin;
+}
+
+/**
+ * Close "icon".
+ */
+
+.alert__close {
+  float: right;
+
+  opacity: $alerts-alert__close-opacity;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}

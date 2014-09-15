@@ -1,0 +1,85 @@
+/**
+ * BUTTONS - THEMES
+ *
+ * Custom button themes.
+ *
+ * Example:
+ *
+ * <a href="#" class="button [button--success]">Button</a>
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Error style button.
+ */
+
+.button--error {
+  @include button(
+    $color: $buttons-button--error-color,
+    $background: $buttons-button--error-background,
+    $border-color: $buttons-button--error-border-color
+  );
+}
+
+/**
+ * Info style button.
+ */
+
+.button--info {
+  @include button(
+    $color: $buttons-button--info-color,
+    $background: $buttons-button--info-background,
+    $border-color: $buttons-button--info-border-color
+  );
+}
+
+/**
+ * Muted style button.
+ */
+
+.button--muted {
+  @include button(
+    $color: $buttons-button--muted-color,
+    $background: $buttons-button--muted-background,
+    $border-color: $buttons-button--muted-border-color
+  );
+}
+
+/**
+ * Success style button.
+ */
+
+.button--success {
+  @include button(
+    $color: $buttons-button--success-color,
+    $background: $buttons-button--success-background,
+    $border-color: $buttons-button--success-border-color
+  );
+}
+
+/**
+ * Warning style button.
+ */
+
+.button--warning {
+  @include button(
+    $color: $buttons-button--warning-color,
+    $background: $buttons-button--warning-background,
+    $border-color: $buttons-button--warning-border-color
+  );
+}
+
+/**
+ * Link style button.
+ */
+
+.button--link {
+  @include button(
+    $color: $buttons-button--link-color,
+    $background: $buttons-button--link-background,
+    $border-color: $buttons-button--link-border-color
+  );
+}

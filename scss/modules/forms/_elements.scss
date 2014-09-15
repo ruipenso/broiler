@@ -1,0 +1,144 @@
+/**
+ * FORMS - ELEMENTS
+ *
+ * Style for form elements.
+ */
+
+//
+// MIXINS
+//
+
+/**
+ * Create a form element.
+ */
+
+@mixin form-element() {
+  display: block;
+
+  width: 100%;
+  height: $forms-form__element-height;
+  padding: $forms-form__element-padding;
+
+  background: $forms-form__element-background;
+  border: $forms-form__element-border;
+
+  border-radius: $forms-form__element-border-radius;
+  box-shadow: $forms-form__element-box-shadow;
+
+  @include transition($base-transition-property, $base-transition-speed, $base-transition-ease);
+
+  /* Focus */
+  &:focus {
+    border-color: $forms-form__element--focus-border-color;
+    box-shadow: $forms-form__element--focus-box-shadow;
+
+    outline: 0;
+  }
+
+  /* Disabled */
+  &[disabled] {
+    background-color: $forms-form__element--disabled-background;
+
+    box-shadow: none;
+  }
+}
+
+//
+// CLASSES
+//
+
+/**
+ * Default label.
+ */
+
+label {
+  display: block;
+
+  margin: $forms-label-margin;
+}
+
+/**
+ * Adjust line-height for side-by-side with inputs.
+ */
+
+.form__label--inline {
+  margin: 0;
+
+  line-height: $forms-form__element-height;
+}
+
+/**
+ * Form elements default styling.
+ *
+ * Apply this to the following elements:
+ *
+ * input[type="text"]
+ * input[type="password"]
+ * input[type="date"]
+ * input[type="datetime"]
+ * input[type="datetime-local"]
+ * input[type="month"]
+ * input[type="week"]
+ * input[type="email"]
+ * input[type="number"]
+ * input[type="search"]
+ * input[type="tel"]
+ * input[type="time"]
+ * input[type="url"]
+ * textarea
+ */
+
+.form__element {
+  @include form-element();
+}
+
+/**
+ * Custom `select` element styling.
+ *
+ * 1. Remove select element arrow for IE10.
+ * 2. Remove on other browser.
+ * 3. Set a custom arrow.
+ *    We have some fake horizontal padding so we can align it properly.
+ *
+ * Note: This trick stopped working as of Firefox 30 realeased in 2014-06-10.
+ *
+ * @see https://gist.github.com/joaocunha/6273016
+ */
+
+select.form__element {
+  line-height: 1;
+
+  &::-ms-expand { display: none; } /* [1] */
+
+  /* [2] */
+  @include appearance(none);
+
+  /* [3] */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+  background-position: 100% center;
+  background-repeat: no-repeat;
+}
+
+/**
+ * Set proper box-sizing.
+ */
+
+input[type="search"] {
+  @include box-sizing(border-box);
+}
+
+/**
+ * Respect amount of rows for textarea.
+ */
+
+textarea[rows] {
+  height: auto;
+}
+
+/**
+ * Normalize file input width.
+ */
+
+input[type="file"] {
+  width: 100%;
+}

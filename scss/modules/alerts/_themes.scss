@@ -1,0 +1,73 @@
+/**
+ * ALERTS - THEMES
+ *
+ * Custom theming.
+ *
+ * Example:
+ *
+ * <div class="alert [alert--error]">
+ *   <a class="alert__close">&times;</a>
+ *
+ *   <h5 class="alert__title">Alert title</h5>
+ *   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+ * </div>
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Muted.
+ */
+
+.alert--muted {
+  @include alert(
+    $color: $alerts-alert--muted-color,
+    $background: $alerts-alert--muted-background
+  );
+}
+
+/**
+ * Error.
+ */
+
+.alert--error {
+  @include alert(
+    $color: $alerts-alert--error-color,
+    $background: $alerts-alert--error-background
+  );
+}
+
+/**
+ * Info.
+ */
+
+.alert--info {
+  @include alert(
+    $color: $alerts-alert--info-color,
+    $background: $alerts-alert--info-background
+  );
+}
+
+/**
+ * Success.
+ */
+
+.alert--success {
+  @include alert(
+    $color: $alerts-alert--success-color,
+    $background: $alerts-alert--success-background
+  );
+}
+
+/**
+ * Warning.
+ */
+
+.alert--warning {
+  @include alert(
+    $color: $alerts-alert--warning-color,
+    $background: $alerts-alert--warning-background
+  );
+}

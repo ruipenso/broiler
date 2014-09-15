@@ -1,0 +1,227 @@
+/**
+ * BASE - MIXINS
+ *
+ * List of mixins:
+ *
+ * - box-sizing
+ * - transition
+ * - appearance
+ * - clearfix
+ * - breakpoint
+ * - visible
+ * - radius
+ * - triangle
+ */
+
+/**
+ * Add box-sizing across browser prefixes.
+ *
+ * 1. Android < 4, iOS Safari < 5 and Safari < 5.1
+ * 2. Firefox < 29
+ */
+
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type; /* [1] */
+     -moz-box-sizing: $type; /* [2] */
+          box-sizing: $type;
+}
+
+/**
+ * Add transition to element.
+ *
+ * 1. Android < 4.4, iOS Safari < 7.0 and Safari < 6.1
+ */
+
+@mixin transition(
+  $property: $base-transition-property,
+  $speed: $base-transition-speed,
+  $ease: $base-transition-ease
+) {
+  -webkit-transition: $property $speed $ease; /* [1] */
+          transition: $property $speed $ease;
+}
+
+/**
+ * Set appearance across browser prefixes.
+ *
+ * 1. Firefox
+ * 2. Android, Chrome, iOS Safari and Safari
+ * 3. The `appearance` property currently does not appear in any
+ *    CSS specification so there is no specifically correct usage.
+ */
+
+@mixin appearance($appearance) {
+  -webkit-appearance: none; /* [1] */
+     -moz-appearance: none; /* [2] */
+          appearance: none; /* [3] */
+}
+
+/**
+ * Clear floats
+ */
+
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after { clear: both; }
+}
+
+/**
+ * Add media-query breakpoint.
+ *
+ * You can find the breakpoints in `_base.scss::$base-breakpoints` that
+ * are picked up here for use in a simple media query mixin.
+ *
+ * $screen - The screen key, i.e., small, medium, etc.
+ */
+
+@mixin breakpoint($screen) {
+  $breakpoint: map-get($base-breakpoints, $screen);
+
+  @media #{$breakpoint} {
+    @content;
+  }
+}
+
+/**
+ * 1. Makes an element visually hidden, but accessible.
+ * 2. Turns off the element-invisible effect.
+ *
+ * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+@mixin visible($visible: true) {
+  /* [1] */
+  @if ($visible == false) {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  /* [2] */
+  @else {
+    position: static !important;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+/**
+ * Creates equal side `border-radius`.
+ *
+ * $side - left, right, top, bottom or false.
+ */
+
+@mixin radius($radius: $base-border-radius, $side: false) {
+  @if ($side != false) {
+    @if ($side == left or $side == right) {
+      border-bottom-#{$side}-radius: $radius;
+      border-top-#{$side}-radius: $radius;
+    }
+
+    @else {
+      border-#{$side}-left-radius: $radius;
+      border-#{$side}-right-radius: $radius;
+    }
+  }
+
+  @else {
+    border-radius: $radius;
+  }
+}
+
+/**
+ * Create a triangle as a pseudo-element.
+ *
+ * Note: You may need to add `position: relative` to the parent element.
+ *
+ * @see http://css-tricks.com/snippets/css/css-triangle/
+ * @see http://www.sitepoint.com/sass-mixin-css-triangles/
+ *
+ * 1. Set triangle's position.
+ * 2. Design triangle.
+ *
+ * $pseudo - insert as a pseudo-element.
+ * $size - the triangle's dimensions in rems.
+ * $color - the triangle's color.
+ * $direction - where the triangle should appear (top, right, bottom, left).
+ * $position - value to locate the triangle depending from $direction.
+ * $ratio - changes the triangle type.
+ *          The 1.4142 $ratio creates an equilateral triangle.
+ */
+
+/* Auxiliar mixin to draw a triangle */
+@mixin _triangle-shape(
+  $size: $base-spacing-medium,
+  $color: $base-primary-color,
+  $direction: left,
+  $position: 50%,
+  $ratio: 1.4142
+) {
+  $opposite-direction: #{opposite-direction($direction)};
+  $perpendicular-border: $size / $ratio solid transparent;
+
+  content: " ";
+  position: absolute;
+
+  /* [1] */
+  #{$opposite-direction}: 100%;
+
+  /* [2] */
+  width: 0;
+  height: 0;
+
+  border-#{$opposite-direction}: $size solid $color;
+
+  @if ($direction == top or $direction == bottom) {
+    border-right: $perpendicular-border;
+    border-left: $perpendicular-border;
+
+    margin-left: -$size;
+    left: $position;
+  }
+
+  @else {
+    border-top: $perpendicular-border;
+    border-bottom: $perpendicular-border;
+
+    margin-top: -$size;
+    top: $position;
+  }
+
+  pointer-events: none;
+}
+
+/* Creates a triangle shape */
+@mixin triangle(
+  $size: $base-spacing-medium,
+  $color: $base-primary-color,
+  $direction: left,
+  $position: 50%,
+  $ratio: 1.4142,
+  $border: 0,
+  $border-color: $base-muted-color
+) {
+  $opposite-direction: #{opposite-direction($direction)};
+  $perpendicular-border: $size / $ratio solid transparent;
+
+  &::before {
+    @include _triangle-shape($size - $border, $color, $direction, $position, $ratio);
+    z-index: 2;
+  }
+
+  @if ($border != 0) {
+    &::after {
+      @include _triangle-shape($size, $border-color, $direction, $position, $ratio);
+      z-index: 1;
+    }
+  }
+}

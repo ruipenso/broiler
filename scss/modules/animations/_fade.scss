@@ -1,0 +1,21 @@
+/**
+ * ANIMATIONS - FADE
+ *
+ * Fade in/out animation.
+ *
+ * Example:
+ *
+ * <div class="fade [in]">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</div>
+ */
+
+//
+// CLASSES
+//
+
+.fade {
+  opacity: 0;
+
+  @include transition(opacity, $base-transition-speed, $base-transition-ease);
+
+  &.in { opacity: 1; }
+}

@@ -1,0 +1,40 @@
+/**
+ * FORMS - UTILS
+ *
+ * Utilities for forms.
+ */
+
+/**
+ * Use this to display help messages.
+ */
+
+.form__help {
+  margin: $forms-form__help-margin;
+
+  color: $base-muted-color;
+}
+
+/**
+ * Use this to show, for instance, error or success messages.
+ */
+
+.form__messages {
+  margin: $forms-form__messages-margin;
+}
+
+
+/**
+ * Removes right side `border-radius`.
+ */
+
+.form__prefix {
+  @include radius(0, right);
+}
+
+/**
+ * Removes left side `border-radius`.
+ */
+
+.form__postfix {
+  @include radius(0, left);
+}

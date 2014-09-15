@@ -1,0 +1,23 @@
+/**
+ * TYPE - PARAGRAPHS
+ *
+ * Paragraphs style.
+ */
+
+//
+// VARIABLES
+//
+
+$type-paragraph-margin: 0 0 $base-spacing-large !default;
+
+//
+// CLASSES
+//
+
+/**
+ * Default paragraph style.
+ */
+
+p {
+  margin: $type-paragraph-margin;
+}

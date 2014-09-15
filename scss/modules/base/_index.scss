@@ -1,0 +1,117 @@
+/**
+ * BASE
+ *
+ * Base style provides a layer on top of `normalize.css` with some customization.
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Colors.
+ *
+ * @link http://clrs.cc
+ */
+
+$base-navy-color: #001f3f !default;
+$base-blue-color: #0074d9 !default;
+$base-aqua-color: #7fdbff !default;
+$base-teal-color: #39cccc !default;
+$base-olive-color: #3d9970 !default;
+$base-green-color: #2ecc40 !default;
+$base-lime-color: #01ff70 !default;
+$base-yellow-color: #ffdc00 !default;
+$base-orange-color: #ff851b !default;
+$base-red-color: #ff4136 !default;
+$base-maroon-color: #85144b !default;
+$base-fuchsia-color: #f012be !default;
+$base-purple-color: #b10dc9 !default;
+$base-black-color: #111111 !default;
+$base-gray-color: #aaaaaa !default;
+$base-silver-color: #dddddd !default;
+$base-white-color: #ffffff !default;
+
+/* Branding */
+$base-primary-color: $base-blue-color !default;
+$base-error-color: $base-red-color !default;
+$base-info-color: $base-aqua-color !default;
+$base-muted-color: $base-silver-color !default;
+$base-success-color: $base-green-color !default;
+$base-warning-color: $base-yellow-color !default;
+
+/**
+ * The default font-size is set to 100% of the browser style sheet (usually 16px)
+ * for compatibility with browser-based text zoom or user-set defaults.
+ *
+ * 1. Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+ *    If you want your base font-size to be different and not have it affect the grid breakpoints,
+ *    set $base-rem to $base-font-size and make sure $base-font-size is a px value.
+ * 2. The $base-line-height is 24px while $base-font-size is 16px.
+ *
+ * @see _functions.scss::$base-rem
+ */
+
+$base-font-size: 100% !default; /* [1] */
+$base-line-height: 150% !default; /* [2] */
+
+$base-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$base-font-weight: normal !default;
+$base-color: $base-black-color !default;
+$base-background: $base-white-color !default;
+
+$base-small-font-size: 80% !default;
+
+/**
+ * Default variables used in various scenarios.
+ *
+ * 1. Used by `scale-color` function to add lightness.
+ * 2. Used by `transition` mixin.
+ * 3. Used for border-radius.
+ *
+ * @link http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method
+ */
+
+$base-lightness-factor: 15% !default; /* [1] */
+
+$base-transition-property: all !default; /* [2] */
+$base-transition-speed: .3s !default; /* [2] */
+$base-transition-ease: ease !default; /* [2] */
+
+$base-border-radius: rem-calc(3); /* [3] */
+
+/**
+ * Custom spacing to have consistency across modules.
+ * Used for paddings, margins, etc.
+ */
+
+$base-spacing-small: rem-calc(5) !default;
+$base-spacing-medium: rem-calc(10) !default;
+$base-spacing-large: rem-calc(15) !default;
+$base-spacing-xlarge: rem-calc(20) !default;
+$base-spacing-xxlarge: rem-calc(25) !default;
+
+/**
+ * Media query breakpoints
+ *
+ * 1. Small (mobile): [0, 640px].
+ * 2. Medium (tablet): [641px, 1024px].
+ * 3. Large: [1025px, 1440px].
+ * 4. XLarge: [1441px, 1920px].
+ * 5. XXLarge: [1921px, ∞].
+ */
+
+$base-breakpoints: (
+  small:   "only screen",
+  medium:  "only screen and (min-width: 40.0625em)",
+  large:   "only screen and (min-width: 64.0625em)",
+  xlarge:  "only screen and (min-width: 64.0625em)",
+  xxlarge: "only screen and (min-width: 120.0625em)"
+) !default;
+
+//
+// IMPORTS
+//
+
+@import "mixins";
+@import "base";

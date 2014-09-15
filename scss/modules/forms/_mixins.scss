@@ -1,0 +1,40 @@
+/**
+ * FORMS - MIXINS
+ *
+ * Helper mixins to create form related elements.
+ */
+
+/**
+ * Create a form element.
+ */
+
+@mixin form-element() {
+  display: block;
+
+  width: 100%;
+  height: $forms-form__element-height;
+  padding: $forms-form__element-padding;
+
+  background: $forms-form__element-background;
+  border: $forms-form__element-border;
+
+  border-radius: $forms-form__element-border-radius;
+  box-shadow: $forms-form__element-box-shadow;
+
+  @include transition($base-transition-property, $base-transition-speed, $base-transition-ease);
+
+  /* Focus */
+  &:focus {
+    border-color: $forms-form__element--focus-border-color;
+    box-shadow: $forms-form__element--focus-box-shadow;
+
+    outline: 0;
+  }
+
+  /* Disabled */
+  &[disabled] {
+    background-color: $forms-form__element--disabled-background;
+
+    box-shadow: none;
+  }
+}

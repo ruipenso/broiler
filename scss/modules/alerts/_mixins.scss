@@ -1,0 +1,48 @@
+/**
+ * ALERTS - MIXINS
+ *
+ * Helpers to create an `alert`.
+ */
+
+/**
+ * Creates an alert.
+ *
+ * 1. Apply base rules.
+ * 2. Style rules.
+ */
+
+@mixin alert(
+  $base: false,
+  $color: $alerts-alert-color,
+  $background: $alerts-alert-background,
+  $radius: $alerts-alert-border-radius,
+  $title-color: $alerts-alert__title-color,
+  $close-color: $alerts-alert__close-color
+) {
+  /* [1] */
+  @if ($base == true) {
+    @if ($alerts-alert-padding != 0) {
+      padding: $alerts-alert-padding;
+    }
+
+    @if ($alerts-alert-margin != 0) {
+      margin: $alerts-alert-margin;
+    }
+  }
+
+  /* [2] */
+  color: $color;
+  background: $background;
+
+  border-radius: $radius;
+
+  &__title { color: $title-color; }
+
+  &__close {
+    &,
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+  }
+}

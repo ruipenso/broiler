@@ -1,0 +1,69 @@
+/**
+ * TYPE - HEADINGS
+ *
+ * Define styles for headings with additional classes so that you can do things
+ * like style `h2` tags like `h4s when the occassion demands.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Headings default style.
+ */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin: $type-heading-margin;
+
+  @if ($type-heading-font-family != $base-font-family) {
+    font-family: $type-heading-font-family;
+  }
+
+  @if ($type-heading-font-weight != bold) {
+    font-weight: $type-heading-font-weight;
+  }
+
+  @if ($type-heading-font-style != normal) {
+    font-style: $type-heading-font-style;
+  }
+
+  line-height: $type-heading-line-height;
+
+  @if ($type-heading-color != inherit or $type-heading-color != $base-color) {
+    color: $type-heading-color;
+  }
+}
+
+/**
+ * Headings font sizing.
+ */
+
+h1, .h1 { font-size: $type-heading-h1-font-size - $type-heading-h1-font-size-reduction; }
+h2, .h2 { font-size: $type-heading-h2-font-size - $type-heading-h2-font-size-reduction; }
+h3, .h3 { font-size: $type-heading-h3-font-size - $type-heading-h3-font-size-reduction; }
+h4, .h4 { font-size: $type-heading-h4-font-size - $type-heading-h4-font-size-reduction; }
+h5, .h5 { font-size: $type-heading-h5-font-size - $type-heading-h5-font-size-reduction; }
+h6, .h6 { font-size: $type-heading-h6-font-size - $type-heading-h6-font-size-reduction; }
+
+//
+// MEDIA-QUERIES
+//
+
+/**
+ * Adjust headings font sizing for `medium`.
+ */
+
+@include breakpoint("medium") {
+  h1, .h1 { font-size: $type-heading-h1-font-size; }
+  h2, .h2 { font-size: $type-heading-h2-font-size; }
+  h3, .h3 { font-size: $type-heading-h3-font-size; }
+  h4, .h4 { font-size: $type-heading-h4-font-size; }
+  h5, .h5 { font-size: $type-heading-h5-font-size; }
+  h6, .h6 { font-size: $type-heading-h6-font-size; }
+}

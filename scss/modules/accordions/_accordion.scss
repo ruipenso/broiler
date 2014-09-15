@@ -1,0 +1,59 @@
+/**
+ * ACCORDIONS - ACCORDION
+ *
+ * Accordion default styling.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Accordion.
+ */
+
+.accordion {
+  margin: $accordions-accordion-margin;
+}
+
+/**
+ * Accordion group.
+ */
+
+.accordion__group {
+  margin: $accordions-accordion__group-margin;
+}
+
+/**
+ * Accordion header.
+ */
+
+.accordion__header {
+  display: block;
+
+  padding: $accordions-accordion__header-padding;
+
+  color: $accordions-accordion__header-color;
+  background: $accordions-accordion__header-background;
+
+  &:hover,
+  &:focus {
+    color: $accordions-accordion__header--hover-color;
+    background: $accordions-accordion__header--hover-background;
+  }
+}
+
+/**
+ * Opened accordion group.
+ */
+
+.accordion__group.open {
+  .accordion__header {
+    &,
+    &:hover,
+    &:focus {
+      color: $accordions-accordion__header--active-color;
+      background: $accordions-accordion__header--active-background;
+    }
+  }
+}

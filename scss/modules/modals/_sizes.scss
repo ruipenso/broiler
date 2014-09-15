@@ -1,0 +1,75 @@
+/**
+ * MODALS - SIZES
+ *
+ * Different sizes for modals.
+ */
+
+//
+// CLASSES
+//
+
+@media #{$modals-modal__dialog-breakpoint} {
+
+  /**
+   * Small.
+   */
+
+  .modal__dialog--small {
+    margin-left: -($modals-modal__dialog--small-width / 2);
+    width: $modals-modal__dialog--small-width;
+  }
+
+  /**
+   * Medium.
+   */
+
+  .modal__dialog--medium {
+    margin-left: -($modals-modal__dialog--medium-width / 2);
+    width: $modals-modal__dialog--medium-width;
+  }
+
+  /**
+   * Large.
+   */
+
+  .modal__dialog--large {
+    margin-left: -($modals-modal__dialog--large-width / 2);
+    width: $modals-modal__dialog--large-width;
+  }
+
+  /**
+   * XLarge.
+   */
+
+  .modal__dialog--xlarge {
+    margin-left: -($modals-modal__dialog--xlarge-width / 2);
+    width: $modals-modal__dialog--xlarge-width;
+  }
+
+  /**
+   * XXLarge.
+   */
+
+  .modal__dialog--xxlarge {
+    margin-left: -($modals-modal__dialog--xxlarge-width / 2);
+    width: $modals-modal__dialog--xxlarge-width;
+  }
+
+  /**
+   * Full width and height.
+   */
+
+  .modal__dialog--expand {
+    top: 0;
+    left: 0;
+
+    margin-left: 0;
+
+    width: 100vw;
+    min-width: 100vw;
+
+    height: 100vh;
+    min-height:100vh;
+  }
+}
+

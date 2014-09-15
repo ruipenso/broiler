@@ -1,0 +1,114 @@
+/**
+ * GRIDS - GRID
+ *
+ * The grid itself.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Grid container.
+ */
+
+.container {
+  width: 100%;
+  max-width: $grids-container-max-width;
+
+  margin: $grids-container-margin;
+
+  padding-right: $grids-grid-spacing;
+  padding-left: $grids-grid-spacing;
+}
+
+/**
+ * Group columns.
+ *
+ * 1. Collapse columns spacing.
+ * 2. Squeze columns spacing.
+ */
+
+.row {
+  @extend %clearfix;
+
+  margin-right: -$grids-grid-spacing;
+  margin-left: -$grids-grid-spacing;
+
+  /* [1] */
+  &--collapse {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .column {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  /* [2] */
+  &--squeeze {
+    margin-right: -$grids-grid--squeze-spacing;
+    margin-left: -$grids-grid--squeze-spacing;
+
+    > .column {
+      padding-right: $grids-grid--squeze-spacing;
+      padding-left: $grids-grid--squeze-spacing;
+    }
+  }
+}
+
+/**
+ * Column defaults.
+ *
+ * 1. Center column.
+ * 2. Force column right alignment.
+ */
+
+.column {
+  float: left;
+
+  padding-left: $grids-grid-spacing;
+  padding-right: $grids-grid-spacing;
+
+  width: 100%;
+
+  &--center { @include grid-column-alignment(center) } /* [1] */
+  &--right { @include grid-column-alignment(right) } /* [2] */
+}
+
+//
+// MEDIA-QUERIES
+//
+
+/**
+ * Generate columns for breakpoints.
+ */
+
+@each $screen, $breakpoint in $grids-grid-breakpoints {
+  @include breakpoint($screen) {
+
+    /**
+     * Set defaults for each screen
+     *
+     * 1. Center column.
+     * 2. Force column right alignment.
+     */
+
+     .#{$screen}--center { @include grid-column-alignment(center) }
+     .#{$screen}--right { @include grid-column-alignment(right) }
+
+    /**
+     * Create columns sizes for each screen.
+     *
+     * 1. Column size, e.g., `.medium-6`.
+     * 2. Column offset, e.g., `.medium-6`.
+     */
+
+    @for $i from 1 through $grids-grid-columns {
+      .#{$screen}-#{$i} { width: grid-calc($i); } /* [1] */
+      .#{$screen}-offset-#{$i} { margin-left: grid-calc($i) } /* [2] */
+    }
+
+  }
+}

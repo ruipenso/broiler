@@ -1,0 +1,88 @@
+/**
+ * GRIDS
+ *
+ * Auto-generated responsive grid-system based on an array of breakpoints.
+ *
+ * @see `./base/base.scss::$base-breakpoints` values.
+ *
+ * Example:
+ *
+ * <div class="container">
+ *   <div class="row">
+ *     <div class="small-12 medium-6 columns">
+ *       <div class="row">
+ *         <div class="small-6 columns">Column</div>
+ *         <div class="small-6 columns">Column</div>
+ *       </div>
+ *     </div>
+ *
+ *     <div class="small-12 medium-6 columns">Column</div>
+ *   </div>
+ * </div>
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Container
+ */
+
+$grids-container-max-width: rem-calc(1000);
+$grids-container-margin: 0 auto;
+
+/**
+ * Default settings.
+ */
+
+$grids-grid-breakpoints: $base-breakpoints;
+$grids-grid-columns: 12 !default;
+$grids-grid-spacing: $base-spacing-large !default;
+
+/**
+ * Reduce columns spacing.
+ */
+
+$grids-grid--squeze-spacing: $base-spacing-small !default;
+
+//
+// FUNCTIONS
+//
+
+/**
+ * Calculate the percentual value for a given number of columns.
+ */
+
+@function grid-calc($columns, $total: $grids-grid-columns) {
+  @return percentage($columns / $total);
+}
+
+//
+// MIXINS
+//
+
+/**
+ * Set column alignment.
+ *
+ * $align - center or right.
+ */
+
+@mixin grid-column-alignment($align) {
+  @if ($align == center) {
+    float: none;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @elseif ($align == right) {
+    float: right;
+  }
+}
+
+//
+// IMPORTS
+//
+
+@import "grid";

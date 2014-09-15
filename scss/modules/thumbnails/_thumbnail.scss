@@ -1,0 +1,53 @@
+/**
+ * THUMBNAILS - THUMBNAIL
+ *
+ * Thumbnail defaults.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Thumbnail default style.
+ *
+ * 1. Linkable thumbnail.
+ */
+
+.thumbnail {
+  margin: $thumbnails-thumbnail-margin;
+  padding: $thumbnails-thumbnail-padding;
+
+  color: $thumbnails-thumbnail-color;
+  background: $thumbnails-thumbnail-background;
+
+  @if ($thumbnails-thumbnail-border-width != 0) {
+    border-width: $thumbnails-thumbnail-border-width;
+    border-style: $thumbnails-thumbnail-border-style;
+    border-color: $thumbnails-thumbnail-border-color;
+  }
+
+  @if ($thumbnails-thumbnail-border-radius != 0) {
+    border-radius: $thumbnails-thumbnail-border-radius;
+  }
+
+  /* [1] */
+  @at-root #{a + &} {
+    display: block;
+
+    @include transition($thumbnails-thumbnail-transition-property, $thumbnails-thumbnail-transition-speed, $thumbnails-thumbnail-transition-ease);
+
+    &:hover,
+    &:focus {
+      color: $thumbnails-thumbnail--hover-color;
+
+      @if ($thumbnails-thumbnail--hover-background != $thumbnails-thumbnail-background) {
+        background: $thumbnails-thumbnail--hover-background;
+      }
+
+      @if ($thumbnails-thumbnail-border-width != 0 and $thumbnails-thumbnail--hover-border-color != $thumbnails-thumbnail-border-color) {
+        border-color: $thumbnails-thumbnail--hover-border-color;
+      }
+    }
+  }
+}

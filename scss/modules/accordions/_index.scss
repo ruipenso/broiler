@@ -1,0 +1,41 @@
+/**
+ * ACCORDIONS
+ *
+ * Create an `accordion` style component.
+ *
+ * Example:
+ *
+ * <div class="accordion">
+ *   <section class="accordion__group [open]">
+ *     <header class="accordion__header">Header 1</header>
+ *     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</div>
+ *   </section>
+ *
+ *   <section class="accordion__group [open]">
+ *     <header class="accordion__header">Header 2</header>
+ *     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</div>
+ *   </section>
+ * </div>
+ */
+
+//
+// VARIABLES
+//
+
+$accordions-accordion-margin: 0 0 $base-spacing-large !default;
+
+$accordions-accordion__group-margin: 0 0 $base-spacing-small !default;
+
+$accordions-accordion__header-padding: $base-spacing-medium !default;
+$accordions-accordion__header-color: $base-black-color !default;
+$accordions-accordion__header-background: $base-muted-color !default;
+$accordions-accordion__header--hover-color: $base-white-color !default;
+$accordions-accordion__header--hover-background: $base-primary-color !default;
+$accordions-accordion__header--active-color: $accordions-accordion__header--hover-color !default;
+$accordions-accordion__header--active-background: $accordions-accordion__header--hover-background !default;
+
+//
+// IMPORTS
+//
+
+@import "accordion";

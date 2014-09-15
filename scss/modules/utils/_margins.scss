@@ -1,0 +1,42 @@
+/**
+ * UTILS - MARGINS
+ *
+ * Utility classes to remove margins.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Remove vertical margins.
+ */
+
+.marginless--top { margin-top: 0 !important; }
+.marginless--bottom { margin-bottom: 0 !important; }
+
+.marginless--vertical {
+  @extend .marginless--top;
+  @extend .marginless--bottom;
+}
+
+/**
+ * Remove horizontal margins.
+ */
+
+.marginless--right { margin-right: 0 !important; }
+.marginless--left { margin-left: 0 !important; }
+
+.marginless--horizontal {
+  @extend .marginless--right;
+  @extend .marginless--left;
+}
+
+/**
+ * Remove all margins.
+ */
+
+.marginless--full {
+  @extend .marginless--vertical;
+  @extend .marginless--horizontal;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "broiler",
+  "version": "0.1.0",
+  "homepage": "https://github.com/seegno/broiler",
+  "description": "A CSS Framework brought to you by Seegno.",
+  "main": "scss/broiler.scss",
+  "keywords": [
+    "sass",
+    "bem"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,76 @@
+/**
+ * TYPE - MISC
+ *
+ * Misc typographic styles.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Small.
+ */
+
+small,
+.small {
+  font-size: $type-small-font-size;
+}
+
+/**
+ * Emphasis.
+ */
+
+em,
+.em {
+  @if ($type-emphasis-font-style != italic) {
+    font-style: $type-emphasis-font-style;
+  }
+
+  @if ($type-emphasis-color != $base-color) {
+    color: $type-emphasis-color;
+  }
+}
+
+/**
+ * Strong.
+ */
+
+strong,
+.strong {
+  @if ($type-strong-font-weight != bold) {
+    font-weight: $type-strong-font-weight;
+  }
+
+  @if ($type-strong-color != $base-color) {
+    color: $type-strong-color;
+  }
+}
+
+/**
+ * Code.
+ */
+
+code {
+  font-family: $type-code-font-family;
+  font-size: $type-code-font-size;
+
+  @if ($type-code-font-weight != normal) {
+    font-weight: $type-code-font-weight;
+  }
+
+  @if ($type-code-color != $base-color) {
+    color: $type-code-color;
+  }
+}
+
+/**
+ * Horizontal Rule.
+ */
+
+hr {
+  margin: $type-hr-margin;
+
+  border-top: 0;
+  border-bottom: $type-hr-height solid $type-hr-background;
+}

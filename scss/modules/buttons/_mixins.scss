@@ -1,0 +1,97 @@
+/**
+ * BUTTONS - MIXINS
+ *
+ * Helpers to create a `button` element.
+ */
+
+/**
+ * Creates a button.
+ *
+ * 1. Apply reset rules.
+ */
+
+@mixin button(
+  $base: false,
+  $color: $buttons-button-color,
+  $background: $buttons-button-background,
+  $border-color: $buttons-button-border-color,
+  $radius: $buttons-button-border-radius,
+  $lightness-factor: $buttons-button-lightness-factor
+) {
+  /* [1] */
+  @if ($base == true) {
+    position: relative;
+
+    display: inline-block;
+
+    padding: $buttons-button-padding;
+
+    @if ($buttons-button-margin != 0) {
+      margin: $buttons-button-margin;
+    }
+
+    @if ($buttons-button-font-family != $base-font-family) {
+      font-family: $buttons-button-font-family;
+    }
+
+    @if ($buttons-button-font-weight != $base-font-weight) {
+      font-weight: $button-font-weight;
+    }
+
+    line-height: normal;
+    text-align: center;
+
+    border-width: $buttons-button-border-width;
+    border-style: $buttons-button-border-style;
+
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    &.disabled,
+    &[disabled] {
+      &,
+      &:hover,
+      &:focus {
+        background: $background;
+        opacity: $buttons-button-opacity;
+        cursor: default;
+      }
+    }
+
+    border-radius: $radius;
+
+    @include transition($buttons-button-transition-property, $buttons-button-transition-speed, $buttons-button-transition-ease);
+  }
+
+  /* Styling */
+  color: $color;
+  background: $background;
+
+  @if ($buttons-button-border-width != 0) {
+    border-color: $border-color;
+  }
+
+  &:hover,
+  &:focus {
+    @if ($background != transparent) {
+      color: $color;
+      background: scale-color($background, $lightness: $lightness-factor);
+    }
+
+    @else {
+      color: scale-color($color, $lightness: $lightness-factor);
+      background: $background;
+    }
+  }
+
+  @if ($background != transparent) {
+    &.disabled,
+    &[disabled] {
+      &,
+      &:hover,
+      &:focus {
+        background: $background;
+      }
+    }
+  }
+}

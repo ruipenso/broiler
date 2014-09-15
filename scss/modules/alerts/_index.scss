@@ -1,0 +1,64 @@
+/**
+ * ALERTS
+ *
+ * Creates an `alert` style component.
+ *
+ * Example:
+ *
+ * <div class="alert">
+ *   <h4 class="alert__title">Alert title</h4>
+ *   Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+ * <div>
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Defaults.
+ */
+
+$alerts-alert-padding: $base-spacing-medium !default;
+$alerts-alert-margin: 0 0 $base-spacing-large !default;
+
+$alerts-alert__title-margin: 0 0 $base-spacing-medium !default;
+$alerts-alert__close-opacity: .5 !default;
+
+/**
+ * Styling.
+ */
+
+$alerts-alert-color: $base-white-color !default;
+$alerts-alert-background: $base-primary-color !default;
+$alerts-alert-border-radius: $base-border-radius !default;
+
+$alerts-alert__title-color: inherit !default;
+$alerts-alert__close-color: inherit !default;
+
+/**
+ * Themes.
+ */
+
+$alerts-alert--muted-color: $base-white-color !default;
+$alerts-alert--muted-background: $base-muted-color !default;
+
+$alerts-alert--error-color: $base-white-color !default;
+$alerts-alert--error-background: $base-error-color !default;
+
+$alerts-alert--info-color: $base-white-color !default;
+$alerts-alert--info-background: $base-info-color !default;
+
+$alerts-alert--success-color: $base-white-color !default;
+$alerts-alert--success-background: $base-success-color !default;
+
+$alerts-alert--warning-color: $base-white-color !default;
+$alerts-alert--warning-background: $base-warning-color !default;
+
+//
+// IMPORTS
+//
+
+@import "mixins";
+@import "alert";
+@import "themes";

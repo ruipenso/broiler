@@ -1,0 +1,50 @@
+/**
+ * THUMBNAILS
+ *
+ * Thumbnail compoenent style.
+ *
+ * Example:
+ *
+ * <a href="#" class="thumbnail">
+ *   <img src="..."></img>
+ *   Title
+ * </a>
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Default style.
+ */
+
+$thumbnails-thumbnail-margin: 0 0 $base-spacing-medium !default;
+$thumbnails-thumbnail-padding: $base-spacing-medium !default;
+
+$thumbnails-thumbnail-color: inherit !default;
+$thumbnails-thumbnail-background: $base-white-color !default;
+$thumbnails-thumbnail-border-width: 1px !default;
+$thumbnails-thumbnail-border-style: solid !default;
+$thumbnails-thumbnail-border-color: $base-muted-color !default;
+
+$thumbnails-thumbnail-border-radius: $base-border-radius !default;
+
+
+/**
+ * Linkable style.
+ */
+
+$thumbnails-thumbnail-transition-property: $base-transition-property !default;
+$thumbnails-thumbnail-transition-speed: $base-transition-speed !default;
+$thumbnails-thumbnail-transition-ease: $base-transition-ease !default;
+
+$thumbnails-thumbnail--hover-color: inherit !default;
+$thumbnails-thumbnail--hover-background: $thumbnails-thumbnail-background !default;
+$thumbnails-thumbnail--hover-border-color: scale-color($base-primary-color, $lightness: $base-lightness-factor) !default;
+
+//
+// IMPORTS
+//
+
+@import "thumbnail";

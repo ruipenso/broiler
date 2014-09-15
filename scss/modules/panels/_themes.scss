@@ -1,0 +1,54 @@
+/**
+ * THEMES
+ *
+ * Panels themes.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Error style panel.
+ */
+
+.panel--error {
+  color: $panels-panel--error-color;
+  background: $panels-panel--error-background;
+}
+
+/**
+ * Info style panel.
+ */
+
+.panel--info {
+  color: $panels-panel--info-color;
+  background: $panels-panel--info-background;
+}
+
+/**
+ * Muted style panel.
+ */
+
+.panel--muted {
+  color: $panels-panel--muted-color;
+  background: $panels-panel--muted-background;
+}
+
+/**
+ * Success style panel.
+ */
+
+.panel--success {
+  color: $panels-panel--success-color;
+  background: $panels-panel--success-background;
+}
+
+/**
+ * Warning style panel.
+ */
+
+.panel--warning {
+  color: $panels-panel--warning-color;
+  background: $panels-panel--warning-background;
+}

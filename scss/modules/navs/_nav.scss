@@ -1,0 +1,29 @@
+/**
+ * NAV
+ *
+ * Base style for every navigation.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Horizontal navigation defaults.
+ */
+
+.nav {
+  @include navs-nav();
+}
+
+/**
+ * Vertical navigation.
+ */
+
+.nav--stack {
+  @extend .nav;
+
+  > li {
+    float: none;
+  }
+}

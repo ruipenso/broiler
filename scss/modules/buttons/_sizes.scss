@@ -1,0 +1,42 @@
+/**
+ * BUTTONS - SIZES
+ *
+ * Custom button sizes.
+ *
+ * Example:
+ *
+ * <a href="#" class="button [button--small]">Button</a>
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Small button.
+ */
+
+.button--small {
+  padding: $buttons-button--small-padding;
+}
+
+/**
+ * Large button.
+ */
+
+.button--large {
+  padding: $buttons-button--large-padding;
+}
+
+/**
+ * Full-width button.
+ */
+
+.button--expand {
+  display: block;
+
+  padding-left: 0;
+  padding-right: 0;
+
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+/**
+ * BUTTONS - BUTTON
+ *
+ * Default button style.
+ */
+
+/**
+ * Default button.
+ */
+
+.button {
+  @include button(true);
+}

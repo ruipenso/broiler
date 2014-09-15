@@ -1,0 +1,38 @@
+/**
+ * TYPE - LINKS
+ *
+ * Style for links, commonly used by anchors (`a`).
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Link default style.
+ */
+
+a {
+  color: $type-link-color;
+  text-decoration: none;
+
+  @include transition($type-link-transition-property, $type-link-transition-speed, $type-link-transition-ease);
+
+  &:hover,
+  &:focus {
+    color: $type-link--hover-color;
+  }
+}
+
+/**
+ * Add text-decoration.
+ */
+
+.link {
+  text-decoration: $type-link-text-decoration;
+
+  &:hover,
+  &:focus {
+    text-decoration: $type-link--hover-text-decoration;
+  }
+}

@@ -1,0 +1,31 @@
+/**
+ * TOOLTIPS
+ *
+ * Tooltip component.
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Tooltip.
+ */
+
+$tooltips-tooltip-padding: $base-spacing-medium !default;
+$tooltips-tooltip-max-width: rem-calc(250);
+
+$tooltips-tooltip-font-size: $base-font-size !default;
+$tooltips-tooltip-color: $base-white-color !default;
+$tooltips-tooltip-background: $base-black-color !default;
+$tooltips-tooltip-border-radius: $base-border-radius !default;
+
+$tooltips-tooltip-spacing: $base-spacing-small !default;
+$tooltips-tooltip__triangle-ratio: 1;
+
+//
+// IMPORTS
+//
+
+@import "tooltip";
+@import "positions";

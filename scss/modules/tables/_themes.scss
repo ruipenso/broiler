@@ -1,0 +1,26 @@
+/**
+ * TABLE - THEMES
+ *
+ * Custom themes for tables.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Stripe.
+ */
+
+.table--stripe {
+  > tbody > tr:nth-child(even) {
+    > td,
+    > th {
+      @if ($tables-table--stripe__body-color != inherit) {
+        color: $tables-table--stripe__body-color;
+      }
+
+      background: $tables-table--stripe__body-background;
+    }
+  }
+}

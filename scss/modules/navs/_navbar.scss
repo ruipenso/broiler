@@ -1,0 +1,187 @@
+/**
+ * NAVS - NAVBAR
+ *
+ * Navigation bar component.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Navbar container.
+ */
+
+.navbar {
+  @if ($navs-navbar-margin != 0) {
+    margin: $navs-navbar-margin;
+  }
+
+  background: $navs-navbar-background;
+
+  @if ($navs-navbar-border-width != 0) {
+    border-width: $navs-navbar-border-width;
+    border-style: $navs-navbar-border-style;
+    border-color: $navs-navbar-border-color;
+  }
+}
+
+/**
+ * Open behaviour.
+ *
+ * 1. Only show `nav` when `.open`.
+ */
+
+.navbar.open {
+  .navbar__nav { display: block; }
+}
+
+/**
+ * Brand.
+ */
+
+.navbar__brand {
+  display: block;
+
+  margin: $navs-navbar__brand-spacing auto;
+
+  line-height: $navs-navbar-height -($navs-navbar__brand-spacing*2);
+}
+
+/**
+ * Nav.
+ *
+ * 1. Collapse borders between items.
+ */
+
+.navbar__nav {
+  display: none;
+
+  @include navs-nav(
+    $inline: false,
+    $padding: $navs-navbar__nav__item-spacing,
+    $color: $navs-navbar__nav__item-color,
+    $background: $navs-navbar__nav__item-background,
+    $color--hover: $navs-navbar__nav__item--hover-color,
+    $background--hover: $navs-navbar__nav__item--hover-background,
+    $color--active: $navs-navbar__nav__item--active-color,
+    $background--active: $navs-navbar__nav__item--active-background
+  );
+
+  > li > a {
+    @if ($navs-navbar__nav__item-border-size != 0) {
+      margin: -1px; /* [1] */
+
+      border: $navs-navbar__nav__item-border-size $navs-navbar__nav__item-border-style $navs-navbar__nav__item-border-color;
+    }
+  }
+}
+
+/**
+ * Toggle.
+ */
+
+.navbar__toggle {
+  $navs-navbar__toggle-height: ($navs-navbar__toggle-line-height * 3) + ($navs-navbar__toggle-line-spacing * 2);
+
+  float: $navs-navbar__toggle-position;
+
+  margin-top: ($navs-navbar-height - $navs-navbar__toggle-height) / 2;
+  margin-bottom: ($navs-navbar-height - $navs-navbar__toggle-height) / 2;
+
+  height: $navs-navbar__toggle-height;
+
+  color: $navs-navbar__toggle-color;
+
+  span {
+    position: relative;
+    float: left;
+    height: $navs-navbar__toggle-height;
+
+
+    &,
+    &::before,
+    &::after {
+      width: $navs-navbar__toggle-line-width;
+      border-top: $navs-navbar__toggle-line-height solid $navs-navbar__toggle-color;
+
+      @include transition($navs-navbar__toggle-transition-property, $navs-navbar__toggle-transition-speed, $navs-navbar__toggle-transition-ease);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+
+      display: block;
+
+      height: 0;
+    }
+
+    &::before { top: $navs-navbar__toggle-line-spacing; }
+    &::after { top: $navs-navbar__toggle-line-height + ($navs-navbar__toggle-line-spacing * 2); }
+  }
+
+  &:hover,
+  &:focus {
+    color: $navs-navbar__toggle--hover-color;
+
+    span {
+      &,
+      &::before,
+      &::after {
+        border-color: $navs-navbar__toggle--hover-color;
+      }
+    }
+  }
+
+}
+
+//
+// MEDIA-QUERIES
+//
+
+@media #{$navs-navbar-breakpoint} {
+
+  /**
+   * Add `navbar` height.
+   */
+
+  .navbar { height: $navs-navbar-height; }
+
+  /**
+   * Clear `brand` side margins.
+   */
+
+  .navbar__brand {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /**
+   * Create an horizontal nav.
+   *
+   * 1. Always show `nav`.
+   */
+
+  .navbar__nav {
+    display: block; /* [1] */
+
+    > li {
+      float: left;
+
+      > a {
+        line-height: $navs-navbar-height + rem-calc(-$navs-navbar__nav__item-border-size) - ($navs-navbar__nav__item-spacing * 2);
+      }
+    }
+  }
+
+  /**
+   * Hide `toggle`.
+   */
+
+  .navbar__toggle {
+    display: none;
+  }
+
+}

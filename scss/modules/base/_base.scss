@@ -1,0 +1,97 @@
+/**
+ * BASE - BASE
+ *
+ * Add some customization to `normalize` defaults.
+ */
+
+//
+// SILENT CLASSES
+//
+
+/**
+ * Clear floats.
+ */
+
+%clearfix { @include clearfix(); }
+
+//
+// CLASSES
+//
+
+/**
+ * Set box-sizing globally to handle padding and border widths.
+ */
+
+*,
+*::before,
+*::after {
+  @include box-sizing(border-box);
+}
+
+/**
+ * HTML default style.
+ */
+
+html {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+
+  @if ($base-font-weight != normal) {
+    font-weight: $base-font-weight;
+  }
+
+  line-height: $base-line-height;
+  color: $base-color;
+
+  background: $base-background;
+}
+
+/**
+ * Adjust height to work with offcanvas and sticky footer.
+ */
+
+html,
+body {
+  height: 100%;
+}
+
+/**
+ * Link/Button default style.
+ */
+
+a,
+button {
+  &:hover { cursor: pointer; }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+}
+
+/**
+ * Add responsiveness to some elements.
+ */
+
+img,
+canvas,
+iframe,
+video,
+svg {
+  max-width: 100%;
+}
+
+/**
+ * Get rid of the gap under images.
+ */
+
+img { display: inline-block; }
+
+/**
+ * Change default cursor for form select element.
+ */
+
+select {
+  cursor: pointer;
+}

@@ -1,0 +1,94 @@
+/**
+ * FORMS
+ *
+ * Classes to create forms.
+ *
+ * Example:
+ *
+ * <form>
+ *   <div class="form__group [has-error]">
+ *     <label for="email">Email</label>
+ *     <input type="email" name="email" placeholder="Your email address" class="form__element" required>
+ *
+ *     <small class="form__help">Example: john.doe@mail.com</small>
+ *
+ *      <ul class="form__messages">
+ *        <li>Email is required.</li>
+ *        <li>Email is invalid.</li>
+ *      </ul>
+ *   </div>
+ * </form>
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Form.
+ */
+
+$forms-form-margin: 0 0 $base-spacing-large !default;
+$forms-form__group-margin: 0 0 $base-spacing-medium !default;
+
+/**
+ * Labels.
+ */
+
+$forms-label-margin: 0 0 $base-spacing-small;
+
+/**
+ * Elements.
+ *
+ * 1. Magic number to ensure that elements and buttons have the same height.
+ */
+
+$forms-form__element-height: rem-calc(40) !default; /* [1] */
+
+$forms-form__element-padding: $base-spacing-medium !default;
+$forms-form__element-background: $base-white-color !default;
+$forms-form__element-border: 1px solid $base-muted-color !default;
+
+$forms-form__element-border-radius: $base-border-radius !default;
+$forms-form__element-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !default;
+
+$forms-form__element-transition-property: $base-transition-property !default;
+$forms-form__element-transition-speed: $base-transition-speed !default;
+$forms-form__element-transition-ease: $base-transition-ease !default;
+
+$forms-form__element--focus-border-color: $base-primary-color !default;
+$forms-form__element--focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1), 0 0 3px $base-primary-color !default;
+
+$forms-form__element--disabled-background: $base-muted-color !default;
+
+/**
+ * Status.
+ */
+
+$forms-status__error-color: $base-error-color !default;
+$forms-status__error-label-color: $forms-status__error-color !default;
+$forms-status__error-form__element-border-color: $forms-status__error-color !default;
+$forms-status__error-form__element--hover-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1), 0 0 3px $forms-status__error-color !default;
+$forms-status__error-form__messages-color: $forms-status__error-color !default;
+
+$forms-status__success-color: $base-success-color !default;
+$forms-status__success-label-color: $forms-status__success-color !default;
+$forms-status__success-form__element-border-color: $forms-status__success-color !default;
+$forms-status__success-form__element--hover-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1), 0 0 3px $forms-status__success-color !default;
+$forms-status__success-form__messages-color: $forms-status__success-color !default;
+
+/**
+ * Utils.
+ */
+
+$forms-form__help-margin: $base-spacing-small 0 0 !default;
+$forms-form__messages-margin: $base-spacing-small 0 0 !default;
+
+//
+// IMPORTS
+//
+
+@import "form";
+@import "elements";
+@import "status";
+@import "utils";

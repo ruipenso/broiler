@@ -1,0 +1,45 @@
+/**
+ * FORMS - STATUS
+ *
+ * Custom form statuses.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Error
+ */
+
+.has-error {
+  label { color: $forms-status__error-label-color; }
+
+  .form__element {
+    border-color: $forms-status__error-form__element-border-color;
+
+    &:focus {
+      box-shadow: $forms-status__error-form__element--hover-box-shadow;
+    }
+  }
+
+  .form__messages { color: $forms-status__error-form__messages-color; }
+}
+
+/**
+ * Success
+ */
+
+.has-success {
+  label { color: $forms-status__success-label-color; }
+
+  .form__element {
+    border-color: $forms-status__success-form__element-border-color;
+
+    &:focus {
+      box-shadow: $forms-status__success-form__element--hover-box-shadow;
+    }
+  }
+
+  .form__messages { color: $forms-status__success-form__messages-color; }
+}

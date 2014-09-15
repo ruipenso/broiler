@@ -1,0 +1,48 @@
+/**
+ * TYPE - UTILS
+ *
+ * Typographic utils.
+ */
+
+/**
+ * Colors.
+ */
+
+.primary { color: $base-primary-color; }
+.error { color: $base-error-color; }
+.info { color: $base-info-color; }
+.muted { color: $base-muted-color; }
+.success { color: $base-success-color; }
+.warning { color: $base-warning-color; }
+
+/**
+ * Links inherits colors from colored classes.
+ */
+
+.primary,
+.error,
+.info,
+.muted,
+.success,
+.warning {
+  a {
+    @extend .link;
+
+    color: inherit;
+  }
+}
+
+/**
+ * Text alignment.
+ */
+
+.align-left { text-align: left !important; }
+.align-center { text-align: center !important; }
+.align-right { text-align: right !important; }
+
+/**
+ * Text transform.
+ */
+
+.lower { text-transform: lowercase !important; }
+.upper { text-transform: uppercase !important; }

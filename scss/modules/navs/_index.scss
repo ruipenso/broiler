@@ -1,0 +1,114 @@
+/**
+ * NAVS
+ *
+ * Navigation styles.
+ *
+ * Example:
+ *
+ * <ul class="nav [nav--stacked]">
+ *   <li [class="active"]><a href="#">Item 1</a></li>
+ *   <li [class="active"]><a href="#">Item 2</a></li>
+ *   <li [class="active"]><a href="#">Item 3</a></li>
+ * </ul>
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Defaults.
+ */
+
+$navs-nav__item-padding: $base-spacing-small !default;
+$navs-nav__item-color: $base-primary-color !default;
+$navs-nav__item-background: $base-white-color !default;
+$navs-nav__item--hover-color: $navs-nav__item-background !default;
+$navs-nav__item--hover-background: $navs-nav__item-color !default;
+$navs-nav__item--active-color: scale-color($navs-nav__item-background, $lightness: $base-lightness-factor) !default;
+$navs-nav__item--active-background: $navs-nav__item-color !default;
+
+/**
+ * Dropdowns.
+ */
+
+$navs-dropdown-min-width: rem-calc(140) !default;
+$navs-dropdown-padding: $base-spacing-small !default;
+$navs-dropdown-background: $base-white-color !default;
+
+$navs-dropdown-border-width: 0 !default; /* use a single value */
+$navs-dropdown-border-style: solid !default;
+$navs-dropdown-border-color: $base-muted-color !default;
+
+$navs-dropdown-border-radius: $base-border-radius !default;
+$navs-dropdown-box-shadow: 0 2px 3px rgba($base-black-color, .3) !default;
+
+$navs-dropdown__item-padding: $base-spacing-small $base-spacing-medium !default;
+$navs-dropdown__item-color: $base-primary-color !default;
+$navs-dropdown__item-background: $base-white-color !default;
+$navs-dropdown__item--hover-color: $navs-dropdown__item-background !default;
+$navs-dropdown__item--hover-background: $navs-dropdown__item-color !default;
+$navs-dropdown__item--active-color: $navs-dropdown__item--hover-color !default;
+$navs-dropdown__item--active-background: $navs-dropdown__item--hover-background !default;
+
+/**
+ * Navbar.
+ */
+
+$navs-navbar-breakpoint: map-get($base-breakpoints, "medium");
+$navs-navbar-height: rem-calc(65) !default;
+$navs-navbar-margin: 0 0 $base-spacing-medium 0 !default;
+$navs-navbar-background: $base-white-color !default;
+$navs-navbar-border-width: 0 0 1px 0 !default;
+$navs-navbar-border-style: solid !default;
+$navs-navbar-border-color: $base-muted-color !default;
+
+/* Brand */
+$navs-navbar__brand-spacing: $base-spacing-medium !default;
+
+/* Nav */
+$navs-navbar__nav__item-spacing: $base-spacing-medium !default;
+$navs-navbar__nav__item-color: $base-primary-color !default;
+$navs-navbar__nav__item-background: $base-white-color !default;
+$navs-navbar__nav__item--hover-color: $navs-navbar__nav__item-background !default;
+$navs-navbar__nav__item--hover-background: $navs-navbar__nav__item-color !default;
+$navs-navbar__nav__item--active-color: $navs-navbar__nav__item-background !default;
+$navs-navbar__nav__item--active-background: scale-color($navs-navbar__nav__item-color, $lightness: $base-lightness-factor) !default;
+$navs-navbar__nav__item-border-size: 1px !default; /* Use a single value */
+$navs-navbar__nav__item-border-style: solid !default;
+$navs-navbar__nav__item-border-color: $navs-navbar-border-color !default;
+
+/* Toggle */
+$navs-navbar__toggle-position: right !default;
+$navs-navbar__toggle-color: $navs-navbar__nav__item-color;
+$navs-navbar__toggle--hover-color: $navs-navbar__nav__item--hover-color;
+$navs-navbar__toggle-transition-property: $base-transition-property !default;
+$navs-navbar__toggle-transition-speed: $base-transition-speed !default;
+$navs-navbar__toggle-transition-ease: $base-transition-ease !default;
+$navs-navbar__toggle-line-width: rem-calc(25) !default;
+$navs-navbar__toggle-line-height: rem-calc(3) !default;
+$navs-navbar__toggle-line-spacing: rem-calc(4) !default;
+
+/**
+ * Tabs.
+ */
+
+$navs-tabs__item-padding: $base-spacing-medium !default;
+$navs-tabs__item-color: $base-black-color !default;
+$navs-tabs__item-background: $base-muted-color !default;
+$navs-tabs__item--hover-color: $base-white-color !default;
+$navs-tabs__item--hover-background: scale-color($base-primary-color, $lightness: $base-lightness-factor) !default;
+$navs-tabs__item--active-color: $navs-tabs__item--hover-color !default;
+$navs-tabs__item--active-background: $base-primary-color !default;
+
+
+//
+// IMPORTS
+//
+
+@import "mixins";
+@import "nav";
+
+@import "dropdowns";
+@import "navbar";
+@import "tabs";

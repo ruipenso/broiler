@@ -1,0 +1,21 @@
+/**
+ * PANELS - PANEL
+ *
+ * Panel component defaults.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Panel defaults.
+ */
+
+.panel {
+  margin: $panels-panel-margin;
+  padding: $panels-panel-padding;
+
+  color: $panels-panel-color;
+  background: $panels-panel-background;
+}

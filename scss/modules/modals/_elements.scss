@@ -1,0 +1,47 @@
+/**
+ * MODALS - ELEMENTS
+ *
+ * Extra styling for inner modal dialog elements.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Header.
+ */
+
+.modal__header {
+  margin: $modals-modal__header-margin;
+  padding: $modals-modal__header-padding;
+
+  @if ($modals-modal__header-border-width != 0) {
+    border-width: $modals-modal__header-border-width;
+    border-style: $modals-modal__header-border-style;
+    border-color: $modals-modal__header-border-color;
+  }
+}
+
+/**
+ * Title.
+ */
+
+.modal__title {
+  margin: $modals-modal__title-margin;
+}
+
+/**
+ * Footer.
+ */
+
+.modal__footer {
+  margin: $modals-modal__footer-margin;
+  padding: $modals-modal__footer-padding;
+
+  @if ($modals-modal__footer-border-width != 0) {
+    border-width: $modals-modal__footer-border-width;
+    border-style: $modals-modal__footer-border-style;
+    border-color: $modals-modal__footer-border-color;
+  }
+}

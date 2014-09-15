@@ -1,0 +1,26 @@
+/**
+ * NAVS - TABS
+ *
+ * Navigation tabs style.
+ */
+
+//
+// CLASSES
+//
+
+/**
+ * Tabs defaults.
+ */
+
+.tabs {
+  @include navs-nav(
+    $inline: true,
+    $padding: $navs-tabs__item-padding,
+    $color: $navs-tabs__item-color,
+    $background: $navs-tabs__item-background,
+    $color--hover: $navs-tabs__item--hover-color,
+    $background--hover: $navs-tabs__item--hover-background,
+    $color--active: $navs-tabs__item--active-color,
+    $background--active: $navs-tabs__item--active-background
+  );
+}

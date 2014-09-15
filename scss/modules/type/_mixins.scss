@@ -1,0 +1,38 @@
+/**
+ * TYPE - MIXINS
+ *
+ * Misc mixins to help create typographic styles.
+ */
+
+//
+// MIXINS
+//
+
+/**
+ * Create an unstyled list.
+ */
+
+@mixin list-unstyled() {
+  margin-left: 0;
+  margin-right: 0;
+
+  list-style: none;
+}
+
+/**
+ * Create an inline list.
+ */
+
+@mixin list-inline($spacing: $type-list--inline__item-margin) {
+  @include list-unstyled;
+
+  > li {
+    display: inline-block;
+
+    margin: $spacing;
+
+    /* Reset side margins */
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+  }
+}

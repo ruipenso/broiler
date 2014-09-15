@@ -1,0 +1,97 @@
+/**
+ * TYPE
+ *
+ * Common typographic patterns.
+ */
+
+//
+// VARIABLES
+//
+
+/**
+ * Headings.
+ */
+
+$type-heading-margin: $base-spacing-medium 0 $base-spacing-large 0 !default;
+$type-heading-font-family: $base-font-family !default;
+$type-heading-font-weight: bold !default;
+$type-heading-font-style: normal !default;
+$type-heading-line-height: $base-line-height !default;
+$type-heading-color: inherit !default;
+$type-heading-h1-font-size: rem-calc(44) !default;
+$type-heading-h2-font-size: rem-calc(37) !default;
+$type-heading-h3-font-size: rem-calc(27) !default;
+$type-heading-h4-font-size: rem-calc(23) !default;
+$type-heading-h5-font-size: rem-calc(18) !default;
+$type-heading-h6-font-size: 1rem !default;
+
+/* Control headings size reduction for small screens */
+$type-heading-h1-font-size-reduction: $base-spacing-medium !default;
+$type-heading-h2-font-size-reduction: $base-spacing-medium !default;
+$type-heading-h3-font-size-reduction: $base-spacing-small !default;
+$type-heading-h4-font-size-reduction: $base-spacing-small !default;
+$type-heading-h5-font-size-reduction: 0 !default;
+$type-heading-h6-font-size-reduction: 0 !default;
+
+/**
+ * Links.
+ */
+
+$type-link-color: $base-primary-color !default;
+$type-link--hover-color: scale-color($type-link-color, $lightness: $base-lightness-factor) !default;
+$type-link-text-decoration: underline !default;
+$type-link--hover-text-decoration: none !default;
+$type-link-transition-property: $base-transition-property !default;
+$type-link-transition-speed: $base-transition-speed !default;
+$type-link-transition-ease: $base-transition-ease !default;
+
+/**
+ * Lists.
+ */
+
+$type-list-margin: 0 0 $base-spacing-large $base-spacing-xlarge !default;
+$type-list--unordered-list-style-type: square !default;
+$type-list--inline__item-margin: 0 $base-spacing-small 0 !default;
+
+$type-definition-list-margin: 0 0 $base-spacing-large !default;
+$type-definition-list__term-font-weight: bold !default;
+$type-definition-list__definition-margin: 0 0 $base-spacing-small 0 !default;
+
+/**
+ * Misc styles.
+ */
+
+/* Small */
+$type-small-font-size: $base-small-font-size !default;
+
+/* Emphasis */
+$type-emphasis-font-style: italic !default;
+$type-emphasis-color: $base-color !default;
+
+/* Strong */
+$type-strong-font-weight: bold !default;
+$type-strong-color: $base-color !default;
+
+/* Code */
+$type-code-font-family: Monaco, Consolas, "Lucida Console", monospace !default;
+$type-code-font-size: $base-small-font-size !default;
+$type-code-font-weight: normal !default;
+$type-code-color: $base-color !default;
+
+/* Horizontal Rule */
+$type-hr-margin: $base-spacing-large 0 !default;
+$type-hr-height: 1px !default;
+$type-hr-background: $base-muted-color !default;
+
+//
+// IMPORTS
+//
+
+@import "mixins";
+
+@import "headings";
+@import "links";
+@import "lists";
+@import "misc";
+@import "paragraphs";
+@import "utils";
