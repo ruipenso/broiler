@@ -1,0 +1,23 @@
+/**
+ * TOOLTIPS - TOOLTIP
+ *
+ * Tooltip defaults.
+ */
+
+/**
+ * Tooltip
+ */
+
+.tooltip {
+  position: absolute;
+  z-index: 1;
+
+  padding: $tooltips-tooltip-padding;
+  max-width: $tooltips-tooltip-max-width;
+
+  font-size: $tooltips-tooltip-font-size;
+  color: $tooltips-tooltip-color;
+
+  background: $tooltips-tooltip-background;
+  border-radius: $tooltips-tooltip-border-radius;
+}
