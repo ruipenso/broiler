@@ -55,7 +55,7 @@ $navs-dropdown__item--active-background: $navs-dropdown__item--hover-background 
  * Navbar.
  */
 
-$navs-navbar-breakpoint: map-get($base-breakpoints, "medium");
+$navs-navbar-breakpoint: map-get($base-breakpoints, "medium") !default;
 $navs-navbar-height: rem-calc(65) !default;
 $navs-navbar-margin: 0 0 $base-spacing-medium 0 !default;
 $navs-navbar-background: $base-white-color !default;
